@@ -26,7 +26,7 @@
 				<li>
 					<router-link :to="{name:'loginLink'}" class="nav-link" v-if="!isLogin">登陆</router-link>
 				</li>
-				<router-link :to="'/personalDetails'" class="nav-link" v-if="isLogin">
+				<router-link :to="'/pizza/personalDetails'" class="nav-link" v-if="isLogin">
 					欢迎您
 					<span>{{user.email}}</span>
 				</router-link>

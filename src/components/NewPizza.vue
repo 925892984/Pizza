@@ -95,6 +95,8 @@
 														this.$router.push({
 															name: "menuLink"
 														})
+													}else {
+														alert('失败')
 													}
 												})
 										} else { //添加品种分类失败，需要删除添加成功的品种

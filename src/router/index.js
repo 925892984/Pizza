@@ -34,107 +34,126 @@ import Phone from '../components/about/contact/Phone'
 
 Vue.use(Router)
 export default new Router({
-  routes:[{
-    path: '/',
-    name: 'homeLink',
-    component: Home,
-  },{
-    path:'/menu',
-    name:'menuLink',
-    component:Menu
-  },{
-    path:'/admin',
-    name:'adminLink',
-    component:Admin
-  },{
-    path:'/leaverMessage',
-    name:"leaverMessage",
-    component:LeaverMessage
-  },{
-    path:'/vip',
-    name:"vip",
-    component:Vip
-  },{
-    path:'/login',
-    name:'loginLink',
-    component:Login
-  },{
-    path:'/register',
-    name:'registerLink',
-    component:Register
-  },{
-    path:'/forget',
-    name:'forgetLink',
-    component:Forget
-  },{
-    path:'/resetPass',
-    name:'resetPassLink',
-    component:ResetPass
-  },{
-    path:'/personalDetails',
-    // name:'personalDetails',
-    component:PersonalDetails
-  },{
-    path:'/details',
-    name:'details',
-    component:Details
-  },{
-    path:'/showMsg',
-    // name:'showMsgLink',
-    component:ShowMsg
-  },{
-    path:'/write',
-    name:'write',
-    component:Write
-  },{
-    path:'/showArticle/:id',
-    // name:'showArticle',
-    component:ShowArticle
-  },{
-    path:'/about',
-    name:'aboutLink',
-    component:About,
-    redirect:'/contact',
-    children:[
-      {
-        path:'/contact',
-        name:'contactLink',
-        component:Contact,
-        redirect:'/phone',
-        children:[
-          {
-            path:'/personName',
-            name:'personName',
-            component:PersonName
-          },
-          {
-            path:'/phone',
-            name:'phoneNumber',
-            component:Phone
-          }
-        ]
-      },
-      {
-        path:'/delivery',
-        name:'deliveryLink',
-        component:Delivery
-      },
-      {
-        path:'/history',
-        name:'historyLink',
-        component:History
-      },{
-        path:'/orderingGuide',
-        name:'orderingGuideLink',
-        component:OrderingGuide
-      }
-    ]
-  },
-  //当路由输入错误时，默认主页
-  {
-    path:'*',
-    redirect:'/'
-  },
+	routes: [{
+			path: '/',
+			name: 'homeLink',
+			component: Home,
+			// component: () => import('@/components/Home')    //懒加载有时会出现Loading chunk {n} failed.
+		}, {
+			path: '/pizza/menu',
+			name: 'menuLink',
+			component: Menu,
+			// component: () => import('@/components/Menu')
+		}, {
+			path: '/pizza/admin',
+			name: 'adminLink',
+			component: Admin,
+			// component: () => import('@/components/Admin')
+		}, {
+			path: '/pizza/leaverMessage',
+			name: "leaverMessage",
+			component: LeaverMessage,
+			// component: () => import('@/components/LeaverMessage')
+		}, {
+			path: '/pizza/vip',
+			name: "vip",
+			component: Vip,
+			// component: () => import('@/components/Vip')
+		}, {
+			path: '/pizza/login',
+			name: 'loginLink',
+			component: Login,
+			// component: () => import('@/components/Login')
+		}, {
+			path: '/pizza/register',
+			name: 'registerLink',
+			component: Register,
+			// component: () => import('@/components/Register')
+		}, {
+			path: '/pizza/forget',
+			name: 'forgetLink',
+			component: Forget,
+			// component: () => import('@/components/Forget')
+		}, {
+			path: '/pizza/resetPass',
+			name: 'resetPassLink',
+			component: ResetPass,
+			// component: () => import('@/components/ResetPass')
+		}, {
+			path: '/pizza/personalDetails',
+			name:'personalDetails',
+			component: PersonalDetails,
+			// component: () => import('@/components/PersonalDetails')
+		}, {
+			path: '/pizza/details',
+			name: 'details',
+			component: Details,
+			// component: () => import('@/components/Details')
+		}, {
+			path: '/pizza/showMsg',
+			name:'showMsgLink',
+			component: ShowMsg,
+			// component: () => import('@/components/Showmsg')
+		}, {
+			path: '/pizza/write',
+			name: 'write',
+			component: Write,
+			// component: () => import('@/components/Write')
+		}, {
+			path: '/pizza/showArticle/:id',
+			// name:'showArticle',
+			component: ShowArticle,
+			// component: () => import('@/components/ShowArticle')
+		}, {
+			path: '/pizza/about',
+			name: 'aboutLink',
+			component: About,
+			// component: () => import('@/components/about/About'),
+			redirect: '/pizza/about/contact',
+			children: [{
+					path: '/pizza/about/contact',
+					name: 'contactLink',
+					component: Contact,
+					// component: () => import('@/components/about/Contact'),
+					redirect: '/pizza/about/phone',
+					children: [{
+							path: '/pizza/about/personName',
+							name: 'personName',
+							component: PersonName,
+							// component: () => import('@/components/about/contact/PersonName')
+						},
+						{
+							path: '/pizza/about/phone',
+							name: 'phoneNumber',
+							component: Phone,
+							// component: () => import('@/components/about/contact/Phone')
+						}
+					]
+				},
+				{
+					path: '/pizza/about/delivery',
+					name: 'deliveryLink',
+					component: Delivery,
+					// component: () => import('@/components/about/Delivery')
+				},
+				{
+					path: '/pizza/about/history',
+					name: 'historyLink',
+					component: History,
+					// component: () => import('@/components/about/History')
+				}, {
+					path: '/pizza/about/orderingGuide',
+					name: 'orderingGuideLink',
+					component: OrderingGuide,
+					// component: () => import('@/components/about/OrderingGuide')
+				}
+			]
+		},
+		//当路由输入错误时，默认主页
+		{
+			path: '*',
+			redirect: '/'
+		},
 	],
-  mode:'history'
+	mode: 'history'
 })

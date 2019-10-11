@@ -27,7 +27,7 @@
         <td>{{item.birthday}}</td>
         <td>{{item.tel}}</td>
         <td>
-          <router-link :to=" '/showMsg' ">
+          <router-link :to=" '/pizza/showMsg' ">
           <button class="btn btn-info">详情</button>
           </router-link>   
         </td>        

@@ -23,7 +23,7 @@
               <button @click="addToBasket(item,option)" class="btn btn-sm btn-outline-success">+</button>
             </td>
             <td>
-              <router-link :to="'/details'">
+              <router-link :to="{name:'details'}">
               <button class="btn btn-sm btn-info">详情</button>
               </router-link>
             </td>

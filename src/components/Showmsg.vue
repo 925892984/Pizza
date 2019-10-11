@@ -3,7 +3,7 @@
     <div class="page-header">
       <h1 class="con-left col-md-8">{{user.username}} <small>的个人信息</small></h1>
       <span class="pull-right col-md-4">
-        <router-link :to=" '/personalDetails'" class="btn btn-primary">编辑</router-link>
+        <router-link :to=" '/pizza/personalDetails'" class="btn btn-primary">编辑</router-link>
         <!-- <button class="btn btn-danger" @click="delectUser(user.id)">删除</button> -->
       </span>
     </div>

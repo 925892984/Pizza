@@ -19,7 +19,7 @@
     <div class="content">
       <!-- <div class="speak" v-for="(item,index) in search(keywords)" :key="index"> -->
         <div class="speak" v-for="(item,index) in nav" :key="index">
-          <router-link :to="'/showArticle/' + item.id" tag="div" class="article">
+          <router-link :to="'/pizza/showArticle/' + item.id" tag="div" class="article">
             <h2 v-rainbow>{{item.title}}</h2>
             <h4>{{item.content}}</h4>
             <p>--{{item.write}}</p>
